@@ -1,0 +1,91 @@
+// fonts
+$font-default: -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Helvetica,
+  Arial,
+  sans-serif;
+$font-alternate: 'Source Sans Pro',
+  -apple-system,
+  BlinkMacSystemFont,
+  Helvetica,
+  sans-serif;
+
+// colors
+$black: #000;
+$white: #fff;
+$gray: #b1b1b1;
+$lightgray: #dadada;
+$verylightgray: #f0f0f0;
+$darkgray: rgba(0, 0, 0, 0.16);
+$red: #eb2a2a;
+$green: #189c2d;
+$battleship-grey: #74787f;
+$deep-pink: #d20061;
+$bluegreen: #01777a;
+$black: #2b2b2b;
+$black-two: #000000;
+$slate-grey: #4e4f65;
+$eggplant: #07081c;
+$pale-grey: #e6e6f1;
+$dark: #1c1d39;
+$steel: #7b7b97;
+$white: #ffffff;
+$bluey-grey: #a0a1ba;
+$barney-purple: #a800b7;
+$dark-lime: #8bc100;
+$pale-grey-two: #f6f6fa;
+$purpleish-blue: #5e56f0;
+$cerulean: #009cd5;
+$pale-violet: #afabf8;
+$ocean: #00838c;
+$duck-egg-blue: #c7f9fa;
+$deep-teal: #015658;
+$dark-teal: #003738;
+$booger: #9acc41;
+$orange: #ef670d;
+$dark-cream: #ffe59a;
+$tomato: #ea3939;
+$mid-blue: #21759a;
+$silver: #bbbdbf;
+$oliveGreen: #b8dea1;
+$darkOliveGreen: #64ac3d;
+$dark-blue: #0155a8;
+$ocean: #00838c;
+
+// misc
+$border: 1px solid $lightgray;
+
+$ten-pixel-root: 62.5%;
+$eleven-pixel-root: 68.75%;
+$twelve-pixel-root: 75%;
+
+$ms-base: 1.2rem;
+$ms-ratio: 1.2; // minor third
+
+$baseline-ratio: 1.66667; // major sixth
+$baseline-unit: 2rem;
+$baseline-increment: $baseline-unit / 4;
+
+$body-font: 'Ubuntu', Arial, Helvetica, sans-serif;
+$heading-font: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+$boldish: 600;
+
+$body-font-family: $body-font;
+$heading-letter-spacing: 0.025em;
+$body-font-size: ms(0);
+$h1-font-size: ms(4);
+$h2-font-size: ms(3) -
+  0.1rem; // Tweak to fit into baseline without ascenders and descenders touching
+$h3-font-size: ms(2);
+$h4-font-size: ms(1);
+$h5-font-size: ms(0);
+$h6-font-size: ms(0);
+
+$border-radius: $baseline-increment / 2;
+$box-shadow: 0 0 2px 2px $black-two;
+
+$spacing-sm: $baseline-increment;
+$spacing-med: $baseline-increment * 3;
+$spacing-lg: $baseline-unit * 2;
+$spacing-xl: $baseline-unit * 3.5;

@@ -1,0 +1,171 @@
+@import 'theme/spacing';
+@import 'theme/breakpoints';
+@import 'theme/variables';
+
+html,
+body {
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  font-size: 100% !important;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+// show background colors in print
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:global(.h1),
+:global(.h2),
+:global(.h3),
+:global(.h4),
+:global(.h5),
+:global(.h6) {
+  line-height: 1.667em !important;
+  font-weight: 500;
+}
+
+:global(.h1) {
+  font-size: 2.074rem !important;
+}
+
+:global(.h2) {
+  font-size: 1.728rem !important;
+}
+
+:global(.h3) {
+  font-size: 1.44rem !important;
+}
+
+:global(.h4) {
+  font-size: 1.2rem !important;
+}
+
+:global(.h5) {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+}
+
+:global(.h6) {
+  font-size: 1rem !important;
+}
+
+h1 {
+  @extend :global(.h1);
+}
+h2 {
+  @extend :global(.h2);
+}
+h3 {
+  @extend :global(.h3);
+}
+h4 {
+  @extend :global(.h4);
+}
+h5 {
+  @extend :global(.h5);
+}
+h6 {
+  @extend :global(.h6);
+}
+
+// margin between two paragraphs
+p + p {
+  margin-top: 1.25rem;
+}
+
+:global(.body) {
+  font-size: 1rem;
+  line-height: 1.667em !important;
+}
+
+:global(.xs) {
+  font-size: 0.83rem !important;
+}
+
+:global(.invisible) {
+  visibility: hidden;
+}
+
+:global(.visible) {
+  visibility: visible;
+}
+
+:global(.hidden) {
+  display: none !important;
+}
+
+:global(.uppercase) {
+  text-transform: uppercase;
+}
+
+:global(.inline-block) {
+  display: inline-block;
+}
+
+// Screen Reader-only (a11y)
+:global(.visuallyhidden) {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+figure {
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+img {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-blue;
+
+  &[href='/'],
+  &[href='#'] {
+    &,
+    * {
+      pointer-events: none;
+      cursor: default;
+      color: inherit;
+    }
+  }
+}
+
+@media (max-width: $smallDesktop - 0.1rem) {
+  :global(.notablet) {
+    display: none;
+  }
+}
+
+@media (max-width: $tablet - 0.1rem) {
+  :global(.nophone) {
+    display: none;
+  }
+}
+
+@media (min-width: $tablet) {
+  :global(.no-gt-phone) {
+    display: none;
+  }
+}

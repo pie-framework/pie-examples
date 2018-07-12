@@ -1,0 +1,51 @@
+{
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "transform-es2015-destructuring",
+    "transform-object-rest-spread"
+  ],
+  "presets": [
+    ["env", {
+      "targets": {
+        "chrome": 52,
+        "browsers": ["last 2 versions", "safari 7"]
+      },
+      "modules": false,
+      "loose": true
+    }],
+    "react"
+  ],
+  "env": {
+    "production": {
+      "plugins": [["react-remove-properties", {"properties": ["data-test", "data-id", "data-test-id"]}]]
+    },
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    },
+    "test": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "chrome": 52,
+            "browsers": ["last 2 versions", "safari 7"]
+          },
+          "loose": true
+        }],
+        "react"
+      ],
+      "plugins": [
+        "syntax-dynamic-import",
+        "dynamic-import-node",
+        "transform-es2015-modules-commonjs",
+        "transform-decorators-legacy",
+        "transform-class-properties",
+        "transform-es2015-destructuring",
+        "transform-object-rest-spread"
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+// mobile portrait - 325px
+$bp-xs: 20.31rem;
+$smallPhone: $bp-xs;
+
+$iPhone6: 23.4375rem;
+
+// mobile landscape - 600px
+$bp-s: 37.5rem;
+$largePhone: $bp-s;
+
+// tablet portrait - 768px
+$bp-m: 48rem;
+$tablet: $bp-m;
+
+// tablet landscape, small desktop - 1024px
+$bp-l: 64rem;
+$smallDesktop: $bp-l;
+
+// desktop - 1280px
+$bp-xl: 80rem;
+$mediumDesktop: $bp-xl;
+
+// large desktop, retina - 1440px
+$bp-xxl: 90rem;
+$largeDesktop: $bp-xxl;
+
+$xs: 325px;
+$sm: 761px;
+$md: 1025px;
+$lg: 1200px;
+$xl: 1400px;

@@ -1,0 +1,8 @@
+@import 'theme/variables';
+@import 'theme/grid';
+
+.grid__row {
+  @media print {
+    display: block;
+  }
+}

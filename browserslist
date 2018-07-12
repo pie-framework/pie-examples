@@ -1,0 +1,14 @@
+[production]
+ie >= 11
+ie_mob >= 11
+edge >= 12
+ff >= 36
+chrome >= 40
+safari >= 8
+opera >= 23
+ios >= 7
+android >= 4.0
+bb >= 10
+
+[development]
+last 1 version
