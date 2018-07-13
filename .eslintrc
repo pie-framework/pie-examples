@@ -56,7 +56,10 @@ rules:
   react/prop-types: 0
   react/sort-comp: 0
   react/jsx-wrap-multilines: 0
+  react/jsx-no-bind: 0
   react/no-danger: 0
+  react/no-find-dom-node: 0
+  react/class-methods-use-this: 0
 
 globals:
   expect: true
