@@ -192,7 +192,7 @@ module.exports = function(env) {
         },
       }),
       CopyWebpackPlugin([
-        { from: path.resolve(__dirname, './pies'), to: 'pies' },
+        // { from: path.resolve(__dirname, './pies'), to: 'pies' },
         path.resolve(__dirname, 'robots.txt'),
         ...iconFiles,
       ]),
@@ -247,7 +247,7 @@ module.exports = function(env) {
         loaders: [...cssLoader],
       }),
       CopyWebpackPlugin([
-        { from: path.resolve(__dirname, './pies'), to: 'pies' },
+        // { from: path.resolve(__dirname, './pies'), to: 'pies' },
         path.resolve(__dirname, 'dll', 'all.dll.js'),
         ...iconFiles,
       ])
@@ -334,7 +334,7 @@ module.exports = function(env) {
     stats: stats,
 
     devServer: {
-      contentBase: ['./build', './pies'],
+      contentBase: [path.resolve(__dirname, 'build'), path.resolve(__dirname, 'pies')],
       disableHostCheck: true,
       publicPath: '/',
       historyApiFallback: {
