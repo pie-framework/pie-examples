@@ -247,7 +247,7 @@ module.exports = function(env) {
         loaders: [...cssLoader],
       }),
       CopyWebpackPlugin([
-        // { from: path.resolve(__dirname, './pies'), to: 'pies' },
+        { from: path.resolve(__dirname, './pies'), to: 'pies' },
         path.resolve(__dirname, 'dll', 'all.dll.js'),
         ...iconFiles,
       ])
