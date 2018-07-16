@@ -52,7 +52,7 @@ export default class DemoLoader extends React.Component {
   }
 
   loadConfig(pie) {
-    return fetch(`/assets/pies/${pie}/config.json`)
+    return fetch(`/pies/${pie}/config.json`)
       .then(r => r.json())
       .catch(e => {
         console.error('error loading config: ', e.message);
@@ -61,7 +61,7 @@ export default class DemoLoader extends React.Component {
 
   loadPie(pie) {
     const scripts = ['pie-view.js', 'pie-configure.js', 'pie-controllers.js'];
-    const paths = scripts.map(s => `/assets/pies/${pie}/${s}`);
+    const paths = scripts.map(s => `/pies/${pie}/${s}`);
 
     loadScripts(paths)
       .then(() => this.loadConfig(pie))

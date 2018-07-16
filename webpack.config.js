@@ -191,7 +191,11 @@ module.exports = function(env) {
           },
         },
       }),
-      CopyWebpackPlugin([path.resolve(__dirname, 'robots.txt'), ...iconFiles]),
+      CopyWebpackPlugin([
+        // { from: path.resolve(__dirname, './pies'), to: 'pies' },
+        path.resolve(__dirname, 'robots.txt'),
+        ...iconFiles,
+      ]),
 
       // parallelize css
       new HappyPack({
@@ -242,7 +246,11 @@ module.exports = function(env) {
         threads: 2,
         loaders: [...cssLoader],
       }),
-      CopyWebpackPlugin([path.resolve(__dirname, 'dll', 'all.dll.js'), ...iconFiles])
+      CopyWebpackPlugin([
+        // { from: path.resolve(__dirname, './pies'), to: 'pies' },
+        path.resolve(__dirname, 'dll', 'all.dll.js'),
+        ...iconFiles,
+      ])
     );
 
     cssLoader = 'happypack/loader?id=scss';
@@ -288,6 +296,16 @@ module.exports = function(env) {
           ],
         },
         {
+          test: /\.css$/,
+          include: path.resolve(__dirname, './node_modules/react-toolbox/lib'),
+          use: isProd
+            ? ExtractTextPlugin.extract({
+                fallback: 'style-loader', // eslint-disable-line indent
+                use: ['css-loader', 'postcss-loader'], // eslint-disable-line indent
+              }) // eslint-disable-line indent
+            : [cacheLoader, 'style-loader', 'css-loader', 'postcss-loader'],
+        },
+        {
           test: /\.scss$/,
           include: sourcePath,
           use: cssLoader,
@@ -316,7 +334,7 @@ module.exports = function(env) {
     stats: stats,
 
     devServer: {
-      contentBase: './app',
+      contentBase: ['./build', './pies'],
       disableHostCheck: true,
       publicPath: '/',
       historyApiFallback: {

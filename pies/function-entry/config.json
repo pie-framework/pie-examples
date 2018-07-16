@@ -3,7 +3,7 @@
     "en-US"
   ],
   "elements": {
-    "function-entry": "@pie-element/function-entry"
+    "function-entry": "@pie-element/function-entry@3.0.1"
   },
   "models": [
     {

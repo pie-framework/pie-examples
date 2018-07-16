@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import Toolbar from './toolbar';
+import Toolbar from 'components/Toolbar';
 import styles from './Demo.scss';
 
 export default class Demo extends React.Component {

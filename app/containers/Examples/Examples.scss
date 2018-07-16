@@ -1,0 +1,47 @@
+@import 'theme/variables';
+
+.panes{
+}
+
+.common{
+  position: fixed;
+  top: $header-height;
+  right: 0;
+  bottom: 0;
+}
+
+
+.subtitle{
+  color: $color-text-mid;
+  display: block;
+  padding-top: 0;
+
+  & span {
+    display: block;
+    align-items: center;
+    color: $color-text-mid;
+    font-size: 13px;
+    display: flex;
+    min-height: 48px;
+    padding: 0 16px;
+    position: relative;
+    text-overflow: ellipsis;
+    word-break: inherit;
+    white-space: normal;
+  }
+}
+
+.examples {
+  composes: common;
+  left: $examples-list-width;
+  padding: 0;
+  overflow: auto;
+}
+
+.list {
+  composes: common;
+  left: 0;
+  width: $examples-list-width;
+  border-right: solid 1px $color-primary-grey;
+  overflow-x: auto;
+}

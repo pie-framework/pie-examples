@@ -26,4 +26,10 @@ yarn-error.log*
 
 pies/*/.pie
 pies/*/*.js
+pies/*/*.eot
+pies/*/*.woff
+pies/*/*.ttf
+pies/*/*.otf
+pies/*/*.woff2
+pies/*/*.svg
 pies/*/example.html

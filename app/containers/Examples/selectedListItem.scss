@@ -1,0 +1,8 @@
+@import 'theme/variables';
+
+.item {
+  & .primary {
+    font-weight: bold;
+    color: $cerulean;
+  }
+}
