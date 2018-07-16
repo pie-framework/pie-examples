@@ -2,12 +2,17 @@
 @import 'theme/breakpoints';
 @import 'theme/variables';
 
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 300; src: local("Open Sans Light"),local(OpenSans-Light),url(//fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXZ2MAKAc2x4R1uOSeegc5U.eot?#) format("eot"),url(//fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2) format("woff2"),url(//fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400; src: local("Open Sans"),local(OpenSans),url(//fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3fY6323mHUZFJMgTvxaG2iE.eot?#) format("eot"),url(//fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format("woff2"),url(//fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700; src: local("Open Sans Bold"),local(OpenSans-Bold),url(//fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzHZ2MAKAc2x4R1uOSeegc5U.eot?#) format("eot"),url(//fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2) format("woff2"),url(//fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format("woff"); }
+
 html,
 body {
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
   font-size: 100% !important;
   min-height: 100%;
+  font-family: "Open Sans";
 }
 
 body {
@@ -39,28 +44,28 @@ body {
 }
 
 :global(.h1) {
-  font-size: 2.074rem !important;
+  font-size: 2.074rem;
 }
 
 :global(.h2) {
-  font-size: 1.728rem !important;
+  font-size: 1.728rem;
 }
 
 :global(.h3) {
-  font-size: 1.44rem !important;
+  font-size: 1.44rem;
 }
 
 :global(.h4) {
-  font-size: 1.2rem !important;
+  font-size: 1.2rem;
 }
 
 :global(.h5) {
-  font-size: 1rem !important;
-  font-weight: 700 !important;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 :global(.h6) {
-  font-size: 1rem !important;
+  font-size: 1rem;
 }
 
 h1 {
@@ -89,11 +94,11 @@ p + p {
 
 :global(.body) {
   font-size: 1rem;
-  line-height: 1.667em !important;
+  line-height: 1.667em;
 }
 
 :global(.xs) {
-  font-size: 0.83rem !important;
+  font-size: 0.83rem;
 }
 
 :global(.invisible) {

@@ -10,7 +10,9 @@ export default class Chunk extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.load !== this.props.load) {
+    const { load } = this.props;
+
+    if (nextProps.load !== load) {
       this.load(nextProps);
     }
   }

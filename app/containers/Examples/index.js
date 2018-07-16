@@ -1,79 +1,65 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import cx from 'classnames';
 import DemoLoader from 'components/DemoLoader';
-import PageTemplate from 'components/PageTemplate';
-import { Row, Col } from 'components/Grid';
-import { List, ListDivider, ListItem, ListSubHeader } from 'react-toolbox/lib/list';
-import selectedListItem from './selectedListItem.scss';
-import styles from './Examples.scss';
-// import s from './styles.scss';
-
-const pies = [
-  {
-    name: 'function-entry',
-    path: 'pies/function-entry',
-    title: 'Function Entry',
-    description: 'temporary',
-  },
-];
-
-const Footer = () => (
-  <Row>
-    <Col xs={12}>Footer Here.</Col>
-  </Row>
-);
+import Header from 'components/Header';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+// import Divider from '@material-ui/core/Divider';
+import pies from '../../../pies/pies.json';
+import s from './Examples.scss';
 
 @connect(
   null,
   {}
 )
 export default class Examples extends React.Component {
+  state = {
+    currentPie: null,
+  };
+
   onClickPie(pie) {
     this.setState({
       currentPie: pie.name,
     });
   }
 
-  componentWillMount() {
-    this.setState({ currentPie: pies[0].name });
-  }
-
   render() {
     const { currentPie } = this.state;
 
     return (
-      <PageTemplate>
-        <div className={styles.panes}>
-          <aside className={styles.list}>
-            <List selectable ripple>
-              <ListSubHeader caption="Examples" />
-              <li className={styles.subtitle}>
-                <span>
-                  These are initial examples of some PIE interactions. A complete catalog of Open
-                  Source interactions and tools is under development.
-                </span>
-              </li>
-              <ListDivider />
-              {pies.map((p, index) => {
-                const selected = currentPie === p.name;
-                const onClick = this.onClickPie.bind(this, p);
-                return (
-                  <ListItem
-                    theme={selected ? selectedListItem : undefined}
-                    key={index}
-                    caption={p.title}
-                    legend={p.description}
-                    onClick={onClick}
-                  />
-                );
-              })}
-            </List>
-          </aside>
-          <div className={styles.examples}>
-            <DemoLoader pies={pies} currentPie={currentPie} />
+      <div>
+        <Header />
+        <aside className={s.list}>
+          <div className={s.subtitleContainer}>
+            <h5 className={s.subtitleHeader}>Examples</h5>
+            <div className={s.subtitle}>
+              These are initial examples of some PIE interactions. A complete catalog of Open Source
+              interactions and tools is under development.
+            </div>
           </div>
+          <List component="nav">
+            {pies.map((p, index) => {
+              const selected = currentPie === p.name;
+              const onClick = this.onClickPie.bind(this, p);
+
+              return (
+                <ListItem button key={index} onClick={onClick}>
+                  <ListItemText
+                    classes={{ primary: cx({ [s.selected]: selected }) }}
+                    primary={p.title}
+                    secondary={p.description}
+                  />
+                </ListItem>
+              );
+            })}
+          </List>
+        </aside>
+        <div className={s.examples}>
+          <DemoLoader pies={pies} currentPie={currentPie} />
         </div>
-      </PageTemplate>
+      </div>
     );
   }
 }

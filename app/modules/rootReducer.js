@@ -4,6 +4,4 @@ export default {
   sample,
 };
 
-export const rootReducer = appReducer => (state, action) => {
-  return appReducer(state, action);
-};
+export const rootReducer = appReducer => (state, action) => appReducer(state, action);

@@ -51,28 +51,25 @@ export default class DemoLoader extends React.Component {
     return this.loadedPies.find(p => `${p.name}` === `${pie}`) !== undefined;
   }
 
-  loadConfig(pie) {
-    return fetch(`/pies/${pie}/config.json`)
+  loadConfig = pie =>
+    fetch(`/pies/${pie}/config.json`)
       .then(r => r.json())
       .catch(e => {
         console.error('error loading config: ', e.message);
       });
-  }
 
   loadPie(pie) {
     const scripts = ['pie-view.js', 'pie-configure.js', 'pie-controllers.js'];
     const paths = scripts.map(s => `/pies/${pie}/${s}`);
+    const state = this.state;
 
     loadScripts(paths)
       .then(() => this.loadConfig(pie))
       .then(config => {
         console.log(this);
-        const loading = this.state.loading.filter(p => p !== pie);
-        const loaded =
-          this.state.loaded.indexOf(pie) === -1
-            ? this.state.loaded.concat([pie])
-            : this.state.loaded;
-        const configs = { ...this.state.configs, [pie]: config };
+        const loading = state.loading.filter(p => p !== pie);
+        const loaded = state.loaded.indexOf(pie) === -1 ? state.loaded.concat([pie]) : state.loaded;
+        const configs = { ...state.configs, [pie]: config };
         this.setState({ loading, loaded, configs });
       })
       .catch(e => {
@@ -95,6 +92,7 @@ export default class DemoLoader extends React.Component {
 
     const loading = this.state.loaded.find(n => n === currentPie) === undefined;
     const config = this.state.configs[currentPie];
+    const show = !loading && currentPie;
 
     const progressBarClassNames = classNames(
       { [styles.active]: currentPie && loading },
@@ -108,12 +106,11 @@ export default class DemoLoader extends React.Component {
           theme={progressBarTheme}
           mode="indeterminate"
         />
-        {currentPie &&
-          !loading && (
-            <div className={styles.demo}>
-              <Demo config={config} tag={currentPie} />
-            </div>
-          )}
+        {show && (
+          <div className={styles.demo}>
+            <Demo config={config} tag={currentPie} />
+          </div>
+        )}
       </div>
     );
   }

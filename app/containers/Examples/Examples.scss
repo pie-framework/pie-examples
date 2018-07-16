@@ -1,34 +1,11 @@
 @import 'theme/variables';
+@import 'theme/spacing';
 
-.panes{
-}
-
-.common{
+.common {
   position: fixed;
   top: $header-height;
   right: 0;
   bottom: 0;
-}
-
-
-.subtitle{
-  color: $color-text-mid;
-  display: block;
-  padding-top: 0;
-
-  & span {
-    display: block;
-    align-items: center;
-    color: $color-text-mid;
-    font-size: 13px;
-    display: flex;
-    min-height: 48px;
-    padding: 0 16px;
-    position: relative;
-    text-overflow: ellipsis;
-    word-break: inherit;
-    white-space: normal;
-  }
 }
 
 .examples {
@@ -45,3 +22,36 @@
   border-right: solid 1px $color-primary-grey;
   overflow-x: auto;
 }
+
+.subtitleContainer {
+  padding-left: $spc-l + $spc-xs;
+  padding-right: $spc-xs;
+}
+
+.subtitleHeader {
+  color: $color-text-mid;
+  margin-bottom: $spc-xs;
+  margin-top: $spc-xs;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+.subtitle {
+  color: $color-text-mid;
+  align-items: center;
+  font-size: 0.8rem;
+  display: flex;
+  min-height: 48px;
+  position: relative;
+  text-overflow: ellipsis;
+  word-break: inherit;
+  white-space: normal;
+  text-align: justify;
+}
+
+.selected {
+  font-weight: bold;
+  color: $color-primary !important;
+}
+

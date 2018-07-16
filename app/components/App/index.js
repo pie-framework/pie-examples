@@ -18,7 +18,9 @@ export default class App extends React.Component {
   };
 
   componentWillMount() {
-    setHistory(this.props.history);
+    const { history } = this.props;
+
+    setHistory(history);
   }
 
   render() {

@@ -38,7 +38,9 @@ export default class ApiClient {
                 requestData: { ...data },
                 requestParams: { ...params },
               });
-            } else if (json.message && json.message.code !== 200) {
+            }
+
+            if (json.message && json.message.code !== 200) {
               return Promise.reject({
                 error: json.message,
                 requestData: { ...data },
