@@ -2,13 +2,13 @@
 
 const webpack = require('webpack');
 const path = require('path');
-const defaults = require('./defaults.js');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const HappyPack = require('happypack');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const defaults = require('./defaults.js');
 
 const host = process.env.HOST || defaults.HOST;
 const port = process.env.PORT || defaults.PORT;
@@ -192,7 +192,7 @@ module.exports = function(env) {
         },
       }),
       CopyWebpackPlugin([
-        // { from: path.resolve(__dirname, './pies'), to: 'pies' },
+        { from: path.resolve(__dirname, './pies'), to: 'pies' },
         path.resolve(__dirname, 'robots.txt'),
         ...iconFiles,
       ]),

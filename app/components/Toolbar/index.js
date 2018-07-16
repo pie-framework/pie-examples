@@ -1,5 +1,8 @@
 import * as React from 'react';
-import RadioButton from '@material-ui/core/Radio';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import Radio from '@material-ui/core/Radio';
+
 import styles from './Toolbar.scss';
 
 export default class Toolbar extends React.Component {
@@ -73,13 +76,14 @@ const Mode = props => (
 const Label = props => <span className={styles.label}>{props.children}</span>;
 
 const ModeButton = props => (
-  <RadioButton
-    className={styles.radioButton}
-    value={props.value}
-    label={props.label}
-    onChange={props.onChangeMode.bind(null, props.value)}
-    checked={props.currentMode === props.value}
-  />
+  <RadioGroup value={props.value} onChange={props.onChangeMode.bind(null, props.value)}>
+    <FormControlLabel
+      value={props.value}
+      checked={props.currentMode === props.value}
+      control={<Radio />}
+      label={props.label}
+    />
+  </RadioGroup>
 );
 
 const Langs = props => {
@@ -95,14 +99,14 @@ const Langs = props => {
     <div className={styles.langs}>
       <Label>Language</Label>
       {langs.map(lang => (
-        <RadioButton
-          key={lang}
-          className={styles.radioButton}
-          value={lang}
-          checked={currentLang === lang}
-          onChange={onChangeLang.bind(null, lang)}
-          label={labels[lang]}
-        />
+        <RadioGroup value={lang} key={lang} onChange={onChangeLang.bind(null, lang)}>
+          <FormControlLabel
+            value={lang}
+            checked={currentLang === lang}
+            control={<Radio />}
+            label={labels[lang]}
+          />
+        </RadioGroup>
       ))}
     </div>
   );
