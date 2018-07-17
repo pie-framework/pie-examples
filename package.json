@@ -16,7 +16,7 @@
     "precommit": "lint-staged",
     "dll": "webpack --config webpack.dll.js",
     "fix-sass": "npm rebuild node-sass",
-    "postinstall": "rimraf .cache-loader && npm run dll"
+    "postinstall": "rimraf .cache-loader && npm run dll && scripts/pack-pies"
   },
   "devDependencies": {
     "pie": "beta",

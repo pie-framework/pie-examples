@@ -25,7 +25,7 @@ export default class Demo extends React.Component {
   get controller() {
     const { tag } = this.props;
     const controllerId = `pie-controller-${tag}`;
-    const map = window[controllerId];
+    const map = window[controllerId] || window['pie-controller-pies.json'];
 
     if (!map) {
       throw new Error(`can't find controller map using window['${controllerId}']`);
