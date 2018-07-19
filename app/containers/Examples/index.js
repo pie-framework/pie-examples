@@ -7,7 +7,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 // import Divider from '@material-ui/core/Divider';
-import pies from '../../../pies/pies.json';
+import pies from '../../pies';
 import s from './Examples.scss';
 
 @connect(
