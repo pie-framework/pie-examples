@@ -196,6 +196,7 @@ module.exports = function(env) {
       CopyWebpackPlugin([
         // { from: path.resolve(__dirname, './pies'), to: 'pies' },
         path.resolve(__dirname, 'robots.txt'),
+        path.resolve(__dirname, './public', '404.html'),
         ...iconFiles,
       ]),
 
