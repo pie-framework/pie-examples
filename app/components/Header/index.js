@@ -18,7 +18,6 @@ export default class Header extends React.Component {
           </div>
           <nav className={styles.nav}>
             <div className={styles.links}>
-              <Link to="/docs">Docs</Link>
               <Link to="/examples">Examples</Link>
             </div>
           </nav>
