@@ -1,0 +1,10 @@
+{
+  "description": "auto generated package.json",
+  "license": "MIT",
+  "name": "controller-generated-pkg",
+  "private": true,
+  "version": "0.0.1",
+  "dependencies": {
+    "@pie-element/point-intercept-controller": "file:../node_modules/@pie-element/point-intercept/controller"
+  }
+}

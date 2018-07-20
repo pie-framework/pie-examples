@@ -1,0 +1,1 @@
+exports['select-text'] = require('@pie-element/select-text-controller');

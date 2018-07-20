@@ -1,0 +1,1 @@
+exports['multiple-choice'] = require('@pie-element/multiple-choice-controller');

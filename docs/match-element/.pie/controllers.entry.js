@@ -1,0 +1,1 @@
+exports['match-element'] = require('@pie-element/match-controller');

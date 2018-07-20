@@ -5,6 +5,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const ProgressBar = require('progress-bar-webpack-plugin');
 const HappyPack = require('happypack');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -16,7 +17,7 @@ const sourcePath = path.join(__dirname, './app');
 const buildDirectory = path.join(__dirname, './build');
 
 const stats = {
-  assets: true,
+  assets: false,
   children: false,
   chunks: false,
   hash: false,
@@ -104,6 +105,7 @@ module.exports = function(env) {
   ];
 
   const plugins = [
+    new ProgressBar(),
     new webpack.PrefetchPlugin(path.join(sourcePath, '/components/App/index.js')),
     // new webpack.PrefetchPlugin(path.join(sourcePath, '../node_modules/something/index.js')),
 

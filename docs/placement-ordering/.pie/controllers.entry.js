@@ -1,0 +1,1 @@
+exports['placement-ordering'] = require('@pie-element/placement-ordering-controller');

@@ -1,0 +1,1 @@
+exports['categorize-el'] = require('@pie-element/categorize-controller');

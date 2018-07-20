@@ -1,0 +1,1 @@
+exports['point-intercept'] = require('@pie-element/point-intercept-controller');
