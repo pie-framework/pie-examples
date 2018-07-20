@@ -23,13 +23,22 @@
     <meta name="msapplication-config" content="browserconfig.xml"/>
     <meta name="application-name" content="Pie Framework"/>
     <meta name="author" content="Pie Team">
+    <script type="text/javascript">!function (i) {
+      if (i.search) {
+        var l = {};
+        i.search.slice(1).split("&").forEach(function (i) {
+          var a = i.split("=");
+          l[a[0]] = a.slice(1).join("=").replace(/~and~/g, "&")
+        }), void 0 !== l.p && window.history.replaceState(null, null, i.pathname.slice(0, -1) + (l.p || "") + (l.q ? "?" + l.q : "") + i.hash)
+      }
+    }(window.location)</script>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <link href="/pie-examples/style-d8672.css" rel="stylesheet">
-    <link rel="preload" href="/pie-examples/main.a0b23.js" as="script"/>
+    <link href="/style-d8672.css" rel="stylesheet">
+    <link rel="preload" href="/main.189b6.js" as="script"/>
   </head>
   <body>
     <div id="root"></div>
-    <script type="text/javascript" src="/pie-examples/vendor.a0b23.js"></script>
-    <script type="text/javascript" src="/pie-examples/main.a0b23.js" async></script>
+    <script type="text/javascript" src="/vendor.189b6.js"></script>
+    <script type="text/javascript" src="/main.189b6.js" async></script>
   </body>
 </html>
