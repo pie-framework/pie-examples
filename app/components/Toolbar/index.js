@@ -2,6 +2,7 @@ import * as React from 'react';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
+import languagesFlag from './languagesFlag';
 
 import styles from './Toolbar.scss';
 
@@ -21,7 +22,7 @@ export default class Toolbar extends React.Component {
 
   onChangeMode(m) {
     console.log('onChangeMode:', m);
-    this.setState({ mode: m }, () => {
+    this.setState({ mode: m.target.value }, () => {
       this.props.onEnvChanged(this.state);
     });
   }
@@ -34,7 +35,7 @@ export default class Toolbar extends React.Component {
 
   render() {
     const { langs } = this.props;
-    const showLangs = langs !== undefined && langs.length > 0;
+    const showLangs = languagesFlag && langs !== undefined && langs.length > 0;
 
     return (
       <div className={styles.root}>
@@ -62,29 +63,15 @@ export default class Toolbar extends React.Component {
 const Mode = props => (
   <div className={styles.mode}>
     <Label>Mode</Label>
-    {props.opts.map((o, index) => (
-      <ModeButton
-        {...o}
-        key={index}
-        currentMode={props.currentMode}
-        onChangeMode={props.onChangeMode}
-      />
-    ))}
+    <RadioGroup value={props.currentMode} onChange={props.onChangeMode}>
+      {props.opts.map((o, index) => (
+        <FormControlLabel label={o.label} value={o.value} key={index} control={<Radio />} />
+      ))}
+    </RadioGroup>
   </div>
 );
 
 const Label = props => <span className={styles.label}>{props.children}</span>;
-
-const ModeButton = props => (
-  <RadioGroup value={props.value} onChange={props.onChangeMode.bind(null, props.value)}>
-    <FormControlLabel
-      value={props.value}
-      checked={props.currentMode === props.value}
-      control={<Radio />}
-      label={props.label}
-    />
-  </RadioGroup>
-);
 
 const Langs = props => {
   const labels = {
