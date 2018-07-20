@@ -279,7 +279,7 @@ module.exports = function(env) {
     },
     output: {
       path: buildDirectory,
-      publicPath: '/pie-examples/',
+      publicPath: isProd ? '/pie-examples/' : '/',
       filename: isProd ? '[name].[hash:5].js' : '[name].js',
       chunkFilename: isProd ? 'pie-web.[name].[chunkhash:5].js' : 'pie-web.[name].js',
     },
