@@ -112,6 +112,6 @@ export function back() {
   history.goBack();
 }
 
-export function getPrefixedRoute(route) {
-  return PATH_PREFIX + route;
+export function getPrefixedPath(path) {
+  return PATH_PREFIX + path;
 }

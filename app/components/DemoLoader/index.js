@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Demo from 'components/Demo';
 import ProgressBar from 'react-toolbox/lib/progress_bar';
+import { getPrefixedPath } from 'utils/url';
 import classNames from 'classnames';
 import progressBarTheme from './ProgressBar.scss';
 import styles from './DemoLoader.scss';
@@ -51,16 +52,20 @@ export default class DemoLoader extends React.Component {
     return this.loadedPies.find(p => `${p.name}` === `${pie}`) !== undefined;
   }
 
-  loadConfig = pie =>
-    fetch(`/${pie}/config.json`)
+  loadConfig = pie => {
+    const configPath = `${pie}/config.json`;
+    return fetch(getPrefixedPath(configPath))
       .then(r => r.json())
       .catch(e => {
         console.error('error loading config: ', e.message);
       });
+  };
 
   loadPie(pie) {
-    const scripts = ['pie-view.js', 'pie-configure.js', 'pie-controllers.js'];
-    const paths = scripts.map(s => `/${pie}/${s}`);
+    const scripts = ['pie-view.js', 'pie-configure.js', 'pie-controllers.js'].map(
+      s => `${pie}/${s}`
+    );
+    const paths = scripts.map(s => getPrefixedPath(s));
     const state = this.state;
 
     loadScripts(paths)
