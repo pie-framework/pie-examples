@@ -111,3 +111,7 @@ export function relativePush(relativeCfg) {
 export function back() {
   history.goBack();
 }
+
+export function getPrefixedRoute(route) {
+  return PATH_PREFIX + route;
+}

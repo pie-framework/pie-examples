@@ -3,11 +3,8 @@ import { connect } from 'react-redux';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import ScrollHere from 'components/ScrollHere';
 import ExamplesRoute from 'routes/Examples';
+import { getPrefixedRoute } from 'utils/url';
 import s from './style.scss';
-
-function getPrefixedRoute(route) {
-  return PATH_PREFIX + route;
-}
 
 @withRouter
 @connect(
