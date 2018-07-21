@@ -61,10 +61,5 @@ globals:
   it: true
   testHelpers: true
   sinon: true
-  API_HOST: true
-  GA_CODE: true
-  GOOGLE_MAP_API_KEY: true
+  PATH_PREFIX: true
   jest: true
-  FETCH_MAX_RESULTS: true
-  LAZY_PAGE_SIZE: true
-  HUBS_APP_URL: true

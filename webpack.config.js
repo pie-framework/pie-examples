@@ -141,6 +141,7 @@ module.exports = function(env) {
 
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
+      PATH_PREFIX: isProd ? '"/pie-examples/"' : '"/"',
     }),
 
     new ExtractTextPlugin({ filename: 'style-[contenthash:5].css' }),
@@ -273,7 +274,7 @@ module.exports = function(env) {
   /* eslint-enable indent */
 
   return {
-    devtool: isProd ? 'cheap-source-map' : 'eval-cheap-module-source-map',
+    devtool: isProd ? 'cheap-source-map' : 'source-map',
     context: sourcePath,
     entry: {
       main: entryPoint,
