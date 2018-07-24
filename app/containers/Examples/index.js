@@ -25,6 +25,10 @@ export default class Examples extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.onClickPie(pies[0]);
+  }
+
   render() {
     const { currentPie } = this.state;
 
