@@ -3,7 +3,7 @@
     "en-US"
   ],
   "elements": {
-    "graph-lines": "@pie-element/graph-lines@1.0.1"
+    "graph-lines": "@pie-element/graph-lines@^1.1.0"
   },
   "models": [
     {

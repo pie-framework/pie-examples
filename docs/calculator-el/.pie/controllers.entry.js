@@ -1,0 +1,1 @@
+exports['calculator-el'] = require('pie-controller/lib/passthrough');

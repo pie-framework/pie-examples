@@ -3,7 +3,7 @@
     "en-US"
   ],
   "elements": {
-    "point-intercept": "@pie-element/point-intercept@3.0.1"
+    "point-intercept": "@pie-element/point-intercept@^3.1.0"
   },
   "models": [
     {

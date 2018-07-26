@@ -1,0 +1,15 @@
+{
+  "langs": [
+    "en-US"
+  ],
+  "elements": {
+    "calculator-el": "@pie-element/calculator@2.0.1"
+  },
+  "models": [
+    {
+      "id": "1",
+      "element": "calculator-el",
+      "mode": "scientific"
+    }
+  ]
+}

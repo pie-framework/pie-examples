@@ -4,9 +4,9 @@ which pie >/dev/null || { echo 'Please install the pie-cli project before contin
 
 root=$(pwd)
 
-for dir in `ls pies`;
+for dir in `ls docs`;
 do
   echo "pack $dir"
-  cd "$root/pies/$dir"
+  cd "$root/docs/$dir"
   $(npm bin)/pie pack --clean --pie-name "$dir"
 done

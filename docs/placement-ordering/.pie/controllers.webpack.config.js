@@ -1,5 +1,5 @@
  
-  //auto generated on: Fri Jul 20 2018 16:59:10 GMT+0300 (EEST)
+  //auto generated on: Thu Jul 26 2018 21:09:54 GMT+0300 (EEST)
   
   module.exports = {
   "module": {
@@ -55,18 +55,18 @@
   },
   "resolveLoader": {
     "modules": [
-      "/Users/elod/KDS/pie-examples/pies/placement-ordering/.pie/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/placement-ordering/.pie/node_modules",
       "node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie/node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie-support-less/node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie-support-react/node_modules"
     ]
   },
-  "context": "/Users/elod/KDS/pie-examples/pies/placement-ordering/.pie",
+  "context": "/Users/elod/KDS/pie-examples/docs/placement-ordering/.pie",
   "entry": "./controllers.entry.js",
   "output": {
     "filename": "pie-controllers.js",
-    "path": "/Users/elod/KDS/pie-examples/pies/placement-ordering",
+    "path": "/Users/elod/KDS/pie-examples/docs/placement-ordering",
     "library": "pie-controller-placement-ordering",
     "libraryTarget": "umd"
   },
@@ -76,9 +76,9 @@
       ".jsx"
     ],
     "modules": [
-      "/Users/elod/KDS/pie-examples/pies/placement-ordering/.pie/.configure/node_modules",
-      "/Users/elod/KDS/pie-examples/pies/placement-ordering/.pie/.controllers/node_modules",
-      "/Users/elod/KDS/pie-examples/pies/placement-ordering/.pie/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/placement-ordering/.pie/.configure/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/placement-ordering/.pie/.controllers/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/placement-ordering/.pie/node_modules",
       "node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie/node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie-support-less/node_modules",

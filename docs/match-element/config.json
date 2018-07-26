@@ -3,7 +3,7 @@
     "en-US"
   ],
   "elements": {
-    "match-element": "@pie-element/match@1.0.1"
+    "match-element": "@pie-element/match@^1.0.3"
   },
   "models": [
     {

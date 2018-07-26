@@ -5,6 +5,6 @@
   "private": true,
   "version": "0.0.1",
   "dependencies": {
-    "@pie-element/match": "1.0.1"
+    "@pie-element/match": "^1.0.3"
   }
 }

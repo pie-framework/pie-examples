@@ -9214,6 +9214,8 @@ exports.default = void 0;
 
 var _extends2 = _interopRequireDefault(__webpack_require__(14));
 
+var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(7));
+
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(11));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(12));
@@ -9223,6 +9225,8 @@ var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(15)
 var _inherits2 = _interopRequireDefault(__webpack_require__(16));
 
 var _react = _interopRequireDefault(__webpack_require__(0));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(1));
 
 var _hoistNonReactStatics = _interopRequireDefault(__webpack_require__(133));
 
@@ -9286,14 +9290,24 @@ var withTheme = function withTheme() {
       }, {
         key: "render",
         value: function render() {
+          var _props = this.props,
+              innerRef = _props.innerRef,
+              other = (0, _objectWithoutProperties2.default)(_props, ["innerRef"]);
           return _react.default.createElement(Component, (0, _extends2.default)({
-            theme: this.state.theme
-          }, this.props));
+            theme: this.state.theme,
+            ref: innerRef
+          }, other));
         }
       }]);
       return WithTheme;
     }(_react.default.Component);
 
+    WithTheme.propTypes = process.env.NODE_ENV !== "production" ? {
+      /**
+       * Use that property to pass a ref callback to the decorated component.
+       */
+      innerRef: _propTypes.default.oneOfType([_propTypes.default.func, _propTypes.default.object])
+    } : {};
     WithTheme.contextTypes = _themeListener.default.contextTypes;
 
     if (process.env.NODE_ENV !== 'production') {
@@ -15478,7 +15492,7 @@ var escapeRegex = /([[\].#*$><+~=|^:(),"'`\s])/g;
 
 function safePrefix(classNamePrefix) {
   var prefix = String(classNamePrefix);
-  process.env.NODE_ENV !== "production" ? (0, _warning.default)(prefix.length < 100, "Material-UI: the class name prefix is too long: ".concat(prefix, ".")) : void 0; // Sanitize the string as will be used to prefix the generated class name.
+  process.env.NODE_ENV !== "production" ? (0, _warning.default)(prefix.length < 256, "Material-UI: the class name prefix is too long: ".concat(prefix, ".")) : void 0; // Sanitize the string as will be used to prefix the generated class name.
 
   return prefix.replace(escapeRegex, '-');
 } // Returns a function which generates unique class names based on counters.
@@ -57974,6 +57988,7 @@ var _helpers = __webpack_require__(148);
 // @inheritedComponent ButtonBase
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: (0, _objectSpread2.default)({}, theme.typography.button, {
       lineHeight: '1.4em',
       // Improve readability for multiline button.
@@ -58001,12 +58016,18 @@ var styles = function styles(theme) {
         color: theme.palette.action.disabled
       }
     }),
+
+    /* Styles applied to the span element that wraps the children. */
     label: {
       display: 'inherit',
       alignItems: 'inherit',
       justifyContent: 'inherit'
     },
+
+    /* Styles applied to the root element if `variant="text"`. */
     text: {},
+
+    /* Styles applied to the root element if `variant="text"` and `color="primary"`. */
     textPrimary: {
       color: theme.palette.primary.main,
       '&:hover': {
@@ -58017,6 +58038,8 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the root element if `variant="text"` and `color="secondary"`. */
     textSecondary: {
       color: theme.palette.secondary.main,
       '&:hover': {
@@ -58027,15 +58050,22 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the root element for backwards compatibility with legacy variant naming. */
     flat: {},
-    // legacy
+
+    /* Styles applied to the root element for backwards compatibility with legacy variant naming. */
     flatPrimary: {},
-    // legacy
+
+    /* Styles applied to the root element for backwards compatibility with legacy variant naming. */
     flatSecondary: {},
-    // legacy
+
+    /* Styles applied to the root element if `variant="outlined"`. */
     outlined: {
       border: "1px solid ".concat(theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)')
     },
+
+    /* Styles applied to the root element if `variant="[contained | fab]"`. */
     contained: {
       color: theme.palette.getContrastText(theme.palette.grey[300]),
       backgroundColor: theme.palette.grey[300],
@@ -58062,6 +58092,8 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the root element if `variant="[contained | fab|"` and `color="primary"`. */
     containedPrimary: {
       color: theme.palette.primary.contrastText,
       backgroundColor: theme.palette.primary.main,
@@ -58073,6 +58105,8 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the root element if `variant="[contained | fab]"` and `color="secondary"`. */
     containedSecondary: {
       color: theme.palette.secondary.contrastText,
       backgroundColor: theme.palette.secondary.main,
@@ -58084,12 +58118,20 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the root element for backwards compatibility with legacy variant naming. */
     raised: {},
     // legacy
+
+    /* Styles applied to the root element for backwards compatibility with legacy variant naming. */
     raisedPrimary: {},
     // legacy
+
+    /* Styles applied to the root element for backwards compatibility with legacy variant naming. */
     raisedSecondary: {},
     // legacy
+
+    /* Styles applied to the root element if `variant="[fab | extendedFab]"`. */
     fab: {
       borderRadius: '50%',
       padding: 0,
@@ -58101,6 +58143,8 @@ var styles = function styles(theme) {
         boxShadow: theme.shadows[12]
       }
     },
+
+    /* Styles applied to the root element if `variant="extendedFab"`. */
     extendedFab: {
       borderRadius: 48 / 2,
       padding: '0 16px',
@@ -58108,27 +58152,41 @@ var styles = function styles(theme) {
       minWidth: 48,
       height: 48
     },
+
+    /* Styles applied to the ButtonBase root element if the button is keyboard focused. */
     focusVisible: {},
+
+    /* Styles applied to the root element if `disabled={true}`. */
     disabled: {},
+
+    /* Styles applied to the root element if `color="inherit"`. */
     colorInherit: {
       color: 'inherit'
     },
+
+    /* Styles applied to the root element if `size="mini"` & `variant="[fab | extendedFab]"`. */
     mini: {
       width: 40,
       height: 40
     },
+
+    /* Styles applied to the root element if `size="small"`. */
     sizeSmall: {
       padding: '7px 8px',
       minWidth: 64,
       minHeight: 32,
       fontSize: theme.typography.pxToRem(13)
     },
+
+    /* Styles applied to the root element if `size="large"`. */
     sizeLarge: {
       padding: '8px 24px',
       minWidth: 112,
       minHeight: 40,
       fontSize: theme.typography.pxToRem(15)
     },
+
+    /* Styles applied to the root element if `fullWidth={true}`. */
     fullWidth: {
       width: '100%'
     }
@@ -59209,6 +59267,7 @@ var _TouchRipple = _interopRequireDefault(__webpack_require__(658));
 var _createRippleHandler = _interopRequireDefault(__webpack_require__(665));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'inline-flex',
     alignItems: 'center',
@@ -59246,7 +59305,11 @@ var styles = {
       cursor: 'default'
     }
   },
+
+  /* Styles applied to the root element if `disabled={true}`. */
   disabled: {},
+
+  /* Styles applied to the root element if keyboard focused. */
   focusVisible: {}
 };
 /* istanbul ignore if */
@@ -59568,7 +59631,7 @@ ButtonBase.propTypes = process.env.NODE_ENV !== "production" ? {
 
   /**
    * This property can help a person know which element has the keyboard focus.
-   * The class name will be applied when the element gain the focus throught a keyboard interaction.
+   * The class name will be applied when the element gain the focus through a keyboard interaction.
    * It's a polyfill for the [CSS :focus-visible feature](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo).
    * The rational for using this feature [is explain here](https://github.com/WICG/focus-visible/blob/master/explainer.md).
    */
@@ -59791,6 +59854,7 @@ exports.DELAY_RIPPLE = DELAY_RIPPLE;
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'block',
       position: 'absolute',
@@ -59803,6 +59867,8 @@ var styles = function styles(theme) {
       pointerEvents: 'none',
       zIndex: 0
     },
+
+    /* Styles applied to the internal `Ripple` components `ripple` class. */
     ripple: {
       width: 50,
       height: 50,
@@ -59811,14 +59877,20 @@ var styles = function styles(theme) {
       opacity: 0,
       position: 'absolute'
     },
+
+    /* Styles applied to the internal `Ripple` components `rippleVisible` class. */
     rippleVisible: {
       opacity: 0.3,
       transform: 'scale(1)',
       animation: "mui-ripple-enter ".concat(DURATION, "ms ").concat(theme.transitions.easing.easeInOut)
     },
+
+    /* Styles applied to the internal `Ripple` components `ripplePulsate` class. */
     ripplePulsate: {
       animationDuration: "".concat(theme.transitions.duration.shorter, "ms")
     },
+
+    /* Styles applied to the internal `Ripple` components `child` class. */
     child: {
       opacity: 1,
       display: 'block',
@@ -59827,10 +59899,14 @@ var styles = function styles(theme) {
       borderRadius: '50%',
       backgroundColor: 'currentColor'
     },
+
+    /* Styles applied to the internal `Ripple` components `childLeaving` class. */
     childLeaving: {
       opacity: 0,
       animation: "mui-ripple-exit ".concat(DURATION, "ms ").concat(theme.transitions.easing.easeInOut)
     },
+
+    /* Styles applied to the internal `Ripple` components `childPulsate` class. */
     childPulsate: {
       position: 'absolute',
       left: 0,
@@ -60005,7 +60081,7 @@ function (_React$PureComponent) {
       }, cb);
     }, _this.stop = function (event, cb) {
       clearTimeout(_this.startTimer);
-      var ripples = _this.state.ripples; // The touch interaction occures to quickly.
+      var ripples = _this.state.ripples; // The touch interaction occurs too quickly.
       // We still want to show ripple effect.
 
       if (event.type === 'touchend' && _this.startTimerCommit) {
@@ -60457,7 +60533,7 @@ function createRippleHandler(instance, eventName, action, cb) {
       cb.call(instance, event);
     }
 
-    var ignore = false;
+    var ignore = false; // Ignore events that have been `event.preventDefault()` marked.
 
     if (event.defaultPrevented) {
       ignore = true;
@@ -61797,6 +61873,7 @@ var _helpers = __webpack_require__(148);
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       userSelect: 'none',
       width: '1em',
@@ -61809,21 +61886,33 @@ var styles = function styles(theme) {
         duration: theme.transitions.duration.shorter
       })
     },
+
+    /* Styles applied to the root element if `color="primary"`. */
     colorPrimary: {
       color: theme.palette.primary.main
     },
+
+    /* Styles applied to the root element if `color="secondary"`. */
     colorSecondary: {
       color: theme.palette.secondary.main
     },
+
+    /* Styles applied to the root element if `color="saction"`. */
     colorAction: {
       color: theme.palette.action.active
     },
+
+    /* Styles applied to the root element if `color="error"`. */
     colorError: {
       color: theme.palette.error.main
     },
+
+    /* Styles applied to the root element if `color="disabled"`. */
     colorDisabled: {
       color: theme.palette.action.disabled
     },
+
+    /* Styles applied to the root element if `fontSize="inherit"`. */
     fontSizeInherit: {
       fontSize: 'inherit'
     }
@@ -61845,7 +61934,7 @@ function SvgIcon(props) {
       titleAccess = props.titleAccess,
       viewBox = props.viewBox,
       other = (0, _objectWithoutProperties2.default)(props, ["children", "classes", "className", "color", "component", "fontSize", "nativeColor", "titleAccess", "viewBox"]);
-  var className = (0, _classnames.default)(classes.root, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes["fontSize".concat((0, _helpers.capitalize)(fontSize))], fontSize !== 'default'), (0, _defineProperty2.default)(_classNames, classes["color".concat((0, _helpers.capitalize)(color))], color !== 'inherit'), _classNames), classNameProp);
+  var className = (0, _classnames.default)(classes.root, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.fontSizeInherit, fontSize === 'inherit'), (0, _defineProperty2.default)(_classNames, classes["color".concat((0, _helpers.capitalize)(color))], color !== 'inherit'), _classNames), classNameProp);
   return _react.default.createElement(Component, (0, _extends2.default)({
     className: className,
     focusable: "false",
@@ -63831,6 +63920,7 @@ function getAnchorEl(anchorEl) {
 }
 
 var styles = {
+  /* Styles applied to the `Paper` component. */
   paper: {
     position: 'absolute',
     overflowY: 'auto',
@@ -63864,9 +63954,7 @@ function (_React$Component) {
     }
 
     return (0, _possibleConstructorReturn2.default)(_this, (_temp = _this = (0, _possibleConstructorReturn2.default)(this, (_ref = Popover.__proto__ || Object.getPrototypeOf(Popover)).call.apply(_ref, [this].concat(args))), _this.paperRef = null, _this.handleGetOffsetTop = getOffsetTop, _this.handleGetOffsetLeft = getOffsetLeft, _this.handleResize = (0, _debounce.default)(function () {
-      var element = _reactDom.default.findDOMNode(_this.paperRef);
-
-      _this.setPositioningStyles(element);
+      _this.setPositioningStyles(_this.paperRef);
     }, 166), _this.componentWillUnmount = function () {
       _this.handleResize.clear();
     }, _this.setPositioningStyles = function (element) {
@@ -63986,7 +64074,7 @@ function (_React$Component) {
       } // If an anchor element wasn't provided, just use the parent body element of this Popover
 
 
-      var anchorElement = getAnchorEl(anchorEl) || (0, _ownerDocument.default)(_reactDom.default.findDOMNode(this.paperRef)).body;
+      var anchorElement = getAnchorEl(anchorEl) || (0, _ownerDocument.default)(this.paperRef).body;
       var anchorRect = anchorElement.getBoundingClientRect();
       var anchorVertical = contentAnchorOffset === 0 ? anchorOrigin.vertical : 'center';
       return {
@@ -64090,8 +64178,8 @@ function (_React$Component) {
       }, TransitionProps), _react.default.createElement(_Paper.default, (0, _extends2.default)({
         className: classes.paper,
         elevation: elevation,
-        ref: function ref(node) {
-          _this2.paperRef = node;
+        ref: function ref(_ref2) {
+          _this2.paperRef = _reactDom.default.findDOMNode(_ref2);
         }
       }, PaperProps), _react.default.createElement(_reactEventListener.default, {
         target: "window",
@@ -64652,6 +64740,7 @@ function getHasTransition(props) {
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       position: 'fixed',
       zIndex: theme.zIndex.modal,
@@ -64660,6 +64749,8 @@ var styles = function styles(theme) {
       top: 0,
       left: 0
     },
+
+    /* Styles applied to the root element if the `Modal` has exited. */
     hidden: {
       visibility: 'hidden'
     }
@@ -64748,6 +64839,11 @@ function (_React$Component) {
 
     _this.handleDocumentKeyDown = function (event) {
       if (!_this.isTopModal() || (0, _keycode.default)(event) !== 'esc') {
+        return;
+      } // Ignore events that have been `event.preventDefault()` marked.
+
+
+      if (event.defaultPrevented) {
         return;
       }
 
@@ -64906,23 +65002,23 @@ function (_React$Component) {
       }
 
       return _react.default.createElement(_Portal.default, {
-        ref: function ref(node) {
-          _this2.mountNode = node ? node.getMountNode() : node;
+        ref: function ref(_ref2) {
+          _this2.mountNode = _ref2 ? _ref2.getMountNode() : _ref2;
         },
         container: container,
         disablePortal: disablePortal,
         onRendered: this.handleRendered
       }, _react.default.createElement("div", (0, _extends2.default)({
-        ref: function ref(node) {
-          _this2.modalRef = node;
+        ref: function ref(_ref) {
+          _this2.modalRef = _ref;
         },
         className: (0, _classnames.default)(classes.root, className, (0, _defineProperty2.default)({}, classes.hidden, exited))
       }, other), hideBackdrop ? null : _react.default.createElement(BackdropComponent, (0, _extends2.default)({
         open: open,
         onClick: this.handleBackdropClick
       }, BackdropProps)), _react.default.createElement(_RootRef.default, {
-        rootRef: function rootRef(node) {
-          _this2.dialogRef = node;
+        rootRef: function rootRef(ref) {
+          _this2.dialogRef = ref;
         }
       }, _react.default.cloneElement(children, childProps))));
     }
@@ -65961,6 +66057,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(26));
 var _Fade = _interopRequireDefault(__webpack_require__(754));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     zIndex: -1,
     width: '100%',
@@ -65972,6 +66069,8 @@ var styles = {
     WebkitTapHighlightColor: 'transparent',
     backgroundColor: 'rgba(0, 0, 0, 0.5)'
   },
+
+  /* Styles applied to the root element if `invisible={true}`. */
   invisible: {
     backgroundColor: 'transparent'
   }
@@ -66307,7 +66406,8 @@ var styles = {
   },
   entered: {
     opacity: 1,
-    transform: getScale(1)
+    // Use translateZ to scrolling issue on Chrome.
+    transform: "".concat(getScale(1), " translateZ(0)")
   }
 };
 /**
@@ -66552,9 +66652,12 @@ var styles = function styles(theme) {
     };
   });
   return (0, _objectSpread2.default)({
+    /* Styles applied to the root element. */
     root: {
       backgroundColor: theme.palette.background.paper
     },
+
+    /* Styles applied to the root element if `square={false}`. */
     rounded: {
       borderRadius: theme.shape.borderRadius
     }

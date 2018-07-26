@@ -1,5 +1,5 @@
  
-  //auto generated on: Fri Jul 20 2018 17:00:48 GMT+0300 (EEST)
+  //auto generated on: Thu Jul 26 2018 21:11:50 GMT+0300 (EEST)
   
   module.exports = {
   "module": {
@@ -55,18 +55,18 @@
   },
   "resolveLoader": {
     "modules": [
-      "/Users/elod/KDS/pie-examples/pies/select-text/.pie/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/select-text/.pie/node_modules",
       "node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie/node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie-support-less/node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie-support-react/node_modules"
     ]
   },
-  "context": "/Users/elod/KDS/pie-examples/pies/select-text/.pie",
+  "context": "/Users/elod/KDS/pie-examples/docs/select-text/.pie",
   "entry": "./controllers.entry.js",
   "output": {
     "filename": "pie-controllers.js",
-    "path": "/Users/elod/KDS/pie-examples/pies/select-text",
+    "path": "/Users/elod/KDS/pie-examples/docs/select-text",
     "library": "pie-controller-select-text",
     "libraryTarget": "umd"
   },
@@ -76,9 +76,9 @@
       ".jsx"
     ],
     "modules": [
-      "/Users/elod/KDS/pie-examples/pies/select-text/.pie/.configure/node_modules",
-      "/Users/elod/KDS/pie-examples/pies/select-text/.pie/.controllers/node_modules",
-      "/Users/elod/KDS/pie-examples/pies/select-text/.pie/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/select-text/.pie/.configure/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/select-text/.pie/.controllers/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/select-text/.pie/node_modules",
       "node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie/node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie-support-less/node_modules",

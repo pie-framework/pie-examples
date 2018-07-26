@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+{
+rm -f ./docs/*
+cp ./build/* ./docs
+} &> /dev/null

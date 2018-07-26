@@ -7,6 +7,8 @@
   "license": "",
   "scripts": {
     "pack-pies": "./scripts/pack-pies",
+    "gh-pages": "./scripts/gh-pages",
+    "pre-deploy": "npm run build && npm run gh-pages",
     "start": "webpack-dev-server",
     "prod": "cross-env NODE_ENV=production webpack-dev-server --env.prod=true",
     "build": "rimraf build && cross-env NODE_ENV=production webpack --env.prod=true",

@@ -1,5 +1,5 @@
  
-  //auto generated on: Fri Jul 20 2018 17:00:01 GMT+0300 (EEST)
+  //auto generated on: Thu Jul 26 2018 21:10:53 GMT+0300 (EEST)
   
   module.exports = {
   "module": {
@@ -55,18 +55,18 @@
   },
   "resolveLoader": {
     "modules": [
-      "/Users/elod/KDS/pie-examples/pies/point-intercept/.pie/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/point-intercept/.pie/node_modules",
       "node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie/node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie-support-less/node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie-support-react/node_modules"
     ]
   },
-  "context": "/Users/elod/KDS/pie-examples/pies/point-intercept/.pie",
+  "context": "/Users/elod/KDS/pie-examples/docs/point-intercept/.pie",
   "entry": "./client.entry.js",
   "output": {
     "filename": "pie-view.js",
-    "path": "/Users/elod/KDS/pie-examples/pies/point-intercept"
+    "path": "/Users/elod/KDS/pie-examples/docs/point-intercept"
   },
   "resolve": {
     "extensions": [
@@ -74,9 +74,9 @@
       ".jsx"
     ],
     "modules": [
-      "/Users/elod/KDS/pie-examples/pies/point-intercept/.pie/.configure/node_modules",
-      "/Users/elod/KDS/pie-examples/pies/point-intercept/.pie/.controllers/node_modules",
-      "/Users/elod/KDS/pie-examples/pies/point-intercept/.pie/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/point-intercept/.pie/.configure/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/point-intercept/.pie/.controllers/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/point-intercept/.pie/node_modules",
       "node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie/node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie-support-less/node_modules",

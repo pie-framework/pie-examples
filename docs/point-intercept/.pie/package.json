@@ -5,6 +5,6 @@
   "private": true,
   "version": "0.0.1",
   "dependencies": {
-    "@pie-element/point-intercept": "3.0.1"
+    "@pie-element/point-intercept": "^3.1.0"
   }
 }

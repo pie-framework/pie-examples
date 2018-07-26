@@ -1,5 +1,5 @@
  
-  //auto generated on: Fri Jul 20 2018 16:53:41 GMT+0300 (EEST)
+  //auto generated on: Thu Jul 26 2018 21:04:17 GMT+0300 (EEST)
   
   module.exports = {
   "module": {
@@ -55,18 +55,18 @@
   },
   "resolveLoader": {
     "modules": [
-      "/Users/elod/KDS/pie-examples/pies/categorize-el/.pie/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/categorize-el/.pie/node_modules",
       "node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie/node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie-support-less/node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie-support-react/node_modules"
     ]
   },
-  "context": "/Users/elod/KDS/pie-examples/pies/categorize-el/.pie",
+  "context": "/Users/elod/KDS/pie-examples/docs/categorize-el/.pie",
   "entry": "./controllers.entry.js",
   "output": {
     "filename": "pie-controllers.js",
-    "path": "/Users/elod/KDS/pie-examples/pies/categorize-el",
+    "path": "/Users/elod/KDS/pie-examples/docs/categorize-el",
     "library": "pie-controller-categorize-el",
     "libraryTarget": "umd"
   },
@@ -76,9 +76,9 @@
       ".jsx"
     ],
     "modules": [
-      "/Users/elod/KDS/pie-examples/pies/categorize-el/.pie/.configure/node_modules",
-      "/Users/elod/KDS/pie-examples/pies/categorize-el/.pie/.controllers/node_modules",
-      "/Users/elod/KDS/pie-examples/pies/categorize-el/.pie/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/categorize-el/.pie/.configure/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/categorize-el/.pie/.controllers/node_modules",
+      "/Users/elod/KDS/pie-examples/docs/categorize-el/.pie/node_modules",
       "node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie/node_modules",
       "/Users/elod/KDS/pie-examples/node_modules/pie-support-less/node_modules",

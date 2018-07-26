@@ -1,0 +1,1 @@
+exports['function-entry'] = require('@pie-element/function-entry-controller');

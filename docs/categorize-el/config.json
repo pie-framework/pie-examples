@@ -3,7 +3,7 @@
     "en-US"
   ],
   "elements": {
-    "categorize-el": "@pie-element/categorize@2.2.0"
+    "categorize-el": "@pie-element/categorize@^2.2.1"
   },
   "models": [
     {
