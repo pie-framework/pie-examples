@@ -21,5 +21,6 @@ const renderApp = Component =>
 renderApp(App);
 
 if (module.hot) {
+  // enable hot reload
   module.hot.accept('components/App', () => renderApp(App));
 }
