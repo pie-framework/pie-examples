@@ -3,10 +3,21 @@
 
 
 "@pie-element/match-controller@file:../node_modules/@pie-element/match/controller":
-  version "1.0.0"
+  version "1.1.2"
   dependencies:
     "@pie-lib/feedback" "^0.4.1"
+    debug "^3.1.0"
 
 "@pie-lib/feedback@^0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@pie-lib/feedback/-/feedback-0.4.1.tgz#07daba2840166945bffadaa47355f91051506566"
+
+debug@^3.1.0:
+  version "3.2.6"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
+  dependencies:
+    ms "^2.1.1"
+
+ms@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"

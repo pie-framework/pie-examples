@@ -3,7 +3,7 @@
     "en-US"
   ],
   "elements": {
-    "multiple-choice": "@pie-element/multiple-choice@2.0.2"
+    "multiple-choice": "@pie-element/multiple-choice@2.3.3"
   },
   "models": [
     {

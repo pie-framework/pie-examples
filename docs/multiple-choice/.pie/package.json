@@ -5,6 +5,6 @@
   "private": true,
   "version": "0.0.1",
   "dependencies": {
-    "@pie-element/multiple-choice": "2.0.2"
+    "@pie-element/multiple-choice": "2.3.3"
   }
 }

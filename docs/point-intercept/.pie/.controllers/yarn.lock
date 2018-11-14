@@ -3,7 +3,7 @@
 
 
 "@pie-element/point-intercept-controller@file:../node_modules/@pie-element/point-intercept/controller":
-  version "1.0.0"
+  version "1.1.0"
   dependencies:
     "@pie-lib/feedback" "^0.4.1"
 
